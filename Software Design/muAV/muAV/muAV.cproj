@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>6.0</ProjectVersion>
+    <ToolchainName>com.Atmel.AVRGCC8</ToolchainName>
+    <ProjectGuid>{27602a24-93e2-441f-ac86-15f45dcefece}</ProjectGuid>
+    <avrdevice>ATmega328</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>C</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>muAV</AssemblyName>
+    <Name>muAV</Name>
+    <RootNamespace>muAV</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <OverrideVtorValue />
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <AsfVersion>2.11.1</AsfVersion>
+    <avrtool>com.atmel.avrdbg.tool.simulator</avrtool>
+    <avrtoolinterface />
+    <com_atmel_avrdbg_tool_simulator>
+      <ToolType>com.atmel.avrdbg.tool.simulator</ToolType>
+      <ToolName>AVR Simulator</ToolName>
+      <ToolNumber>
+      </ToolNumber>
+      <KeepTimersRunning>true</KeepTimersRunning>
+      <OverrideVtor>false</OverrideVtor>
+      <OverrideVtorValue>
+      </OverrideVtorValue>
+      <Channel>
+        <host>127.0.0.1</host>
+        <port>54107</port>
+        <ssl>False</ssl>
+      </Channel>
+    </com_atmel_avrdbg_tool_simulator>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <AvrGcc>
+        <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+        <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+        <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+        <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+        <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+        <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+        <avrgcc.compiler.optimization.level>Optimize for size (-Os)</avrgcc.compiler.optimization.level>
+        <avrgcc.compiler.optimization.PackStructureMembers>True</avrgcc.compiler.optimization.PackStructureMembers>
+        <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+        <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+        <avrgcc.linker.libraries.Libraries>
+          <ListValues>
+            <Value>m</Value>
+          </ListValues>
+        </avrgcc.linker.libraries.Libraries>
+      </AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <AvrGcc>
+  <avrgcc.common.outputfiles.hex>True</avrgcc.common.outputfiles.hex>
+  <avrgcc.common.outputfiles.lss>True</avrgcc.common.outputfiles.lss>
+  <avrgcc.common.outputfiles.eep>True</avrgcc.common.outputfiles.eep>
+  <avrgcc.common.outputfiles.srec>True</avrgcc.common.outputfiles.srec>
+  <avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>True</avrgcc.compiler.general.ChangeDefaultCharTypeUnsigned>
+  <avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>True</avrgcc.compiler.general.ChangeDefaultBitFieldUnsigned>
+  <avrgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>../AVRlib</Value>
+      <Value>../config</Value>
+      <Value>../imu3000</Value>
+      <Value>../motorControl</Value>
+      <Value>../PeterFleury</Value>
+      <Value>../fpmath</Value>
+      <Value>../Control</Value>
+      <Value>..</Value>
+      <Value>../Coms</Value>
+    </ListValues>
+  </avrgcc.compiler.directories.IncludePaths>
+  <avrgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</avrgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+  <avrgcc.compiler.optimization.AllocateBytesNeededForEnum>True</avrgcc.compiler.optimization.AllocateBytesNeededForEnum>
+  <avrgcc.compiler.optimization.DebugLevel>Default (-g2)</avrgcc.compiler.optimization.DebugLevel>
+  <avrgcc.compiler.warnings.AllWarnings>True</avrgcc.compiler.warnings.AllWarnings>
+  <avrgcc.linker.libraries.Libraries>
+    <ListValues>
+      <Value>m</Value>
+    </ListValues>
+  </avrgcc.linker.libraries.Libraries>
+  <avrgcc.linker.libraries.LibrarySearchPaths>
+    <ListValues>
+      <Value>..</Value>
+    </ListValues>
+  </avrgcc.linker.libraries.LibrarySearchPaths>
+  <avrgcc.linker.optimization.GarbageCollectUnusedSections>True</avrgcc.linker.optimization.GarbageCollectUnusedSections>
+  <avrgcc.assembler.debugging.DebugLevel>Default (-Wa,-g)</avrgcc.assembler.debugging.DebugLevel>
+</AvrGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AVRlib\buffer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="AVRlib\buffer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="AVRlib\defs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="AVRlib\i2c.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="AVRlib\i2c.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="AVRlib\rprintf.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="AVRlib\rprintf.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="AVRlib\servoconf.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="AVRlib\timerx8.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="AVRlib\timerx8.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="AVRlib\uart.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="AVRlib\uart.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="config\avrlibdefs.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="Coms\mavlink_functions.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Coms\mavlink_functions.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="config\avrlibtypes.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="config\eeprom_param.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="config\eeprom_param.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="config\global.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="config\global_parameters.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="config\i2cconf.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Control\control.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Control\control.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FPmath\atan2LUT.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FPmath\atan2LUT.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FPmath\atanLUT.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FPmath\isqrt.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FPmath\isqrt.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FPmath\test.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="imu3000\adxl345.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="imu3000\adxl345.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="imu3000\imu3000.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="imu3000\imu3000.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="imu3000\umpl\accel.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\accel.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\advFunc.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\advFunc.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\checksum.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\checksum.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\compass_debug.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\dmpDefault.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\dmpDefault.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\dmpKey.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\dmpmap.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\dmp_memory.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\errno-base.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\key0_96.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\key0_96.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\kxtf9.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\ml.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\ml.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mlarray_lite.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mlBiasNoMotion.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mlBiasNoMotion.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mlcontrol.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mlcontrol.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mldl.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mldl.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mldl_cfg.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mldl_cfg.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mldl_cfg_init.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mldl_cfg_init_umpl_3050.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mldmp.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mldmp.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mlFIFO.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mlFIFO.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mlFIFOHW.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mlFIFOHW.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mlinclude.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mlmath.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mlMathFunc.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mlMathFunc.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mlos.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mlos_at328.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mlSetGyroBias.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mlSetGyroBias.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mlsl.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mlsl_at328.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mlstates.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mlstates.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mlsupervisor.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mlsupervisor.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mltypes.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\ml_features.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\ml_init.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\ml_invobj.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\ml_invobj.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\ml_lite.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mpu.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\mpu3050.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\slave.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\temp_comp.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\temp_comp_u.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\umplsetup.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\umplsetup.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\umplstates.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\umplstates.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\umpl_nvmem.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\umpl_nvmem.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\ustore_delegate_io.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\ustore_lite_fusion_delegate.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\ustore_lite_fusion_delegate.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\ustore_manager.c">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\ustore_manager.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\ustore_manager_io.h">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="imu3000\umpl\ustore_nvram_uc3_io.c">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="motorControl\motorControl.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="motorControl\motorControl.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="muAV.c">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="AVRlib\" />
+    <Folder Include="config\" />
+    <Folder Include="FPmath\" />
+    <Folder Include="imu3000\" />
+    <Folder Include="imu3000\umpl\" />
+    <Folder Include="motorControl\" />
+    <Folder Include="Control" />
+    <Folder Include="Coms" />
+    <Folder Include="PeterFleury\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="motorControl\ServoPwm.png">
+      <SubType>compile</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>
