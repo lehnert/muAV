@@ -1,4 +1,4 @@
-muAV
+µAV (muAV - Micro Unmanned Aerial Vehicle ) 
 ====
 
 This project has been developed within the Cyphy Lab at the Queensland University of Technology. More information can be found at https://wiki.qut.edu.au/display/cyphy/Open+Source+Palm+Sized+Quadrotor
@@ -12,7 +12,7 @@ The aim of the micro quadrotor project is to provide a lightweight (approximatel
 
 Contributors:
 
-Christophe Lehnert - 
+Christophe Lehnert - https://wiki.qut.edu.au/display/cyphy/Chris+Lehnert
 Peter Corke - https://wiki.qut.edu.au/display/cyphy/Peter+Corke
 
 License:
